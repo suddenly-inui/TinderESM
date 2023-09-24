@@ -31,6 +31,11 @@ struct CardStackView: View {
                 fetchEsm()
             }
         }
+        .onChange(of: esmState){
+            if esmState{
+                fetchEsm()
+            }
+        }
     }
     
     func fetchEsm(){
