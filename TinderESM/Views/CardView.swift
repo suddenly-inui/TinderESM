@@ -1,18 +1,61 @@
-//
-//  CardView.swift
-//  TinderESM
-//
-//  Created by Yuki Inui on 2023/09/24.
-//
-
 import SwiftUI
 
 struct CardView: View {
+    @State private var offset: CGSize = .zero
+    @State private var isSwiping = false
+    
+    @Binding var esm: Esm
+    @Binding var esmState: Bool
+    let isLast: Bool
+    
+    let apiService = APIService()
+    let defaults = UserDefaults.standard
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("\(esm.title)")
+            .padding()
+            .background(Color.blue)
+            .cornerRadius(10)
+            .offset(offset)
+            .gesture(
+                DragGesture()
+                    .onChanged { gesture in
+                        offset = gesture.translation
+                    }
+                    .onEnded { gesture in
+                        withAnimation(.linear(duration: 0.2)) {
+                            if gesture.translation.width > 100 {
+                                offset.width = 300 // 右にスワイプ
+                                send_label(userId: "999", esmId: esm.esm_id, label: "r")
+                                whenLastCard(isLast: isLast)
+                            } else if gesture.translation.width < -100 {
+                                offset.width = -300 // 左にスワイプ
+                                send_label(userId: "999", esmId: esm.esm_id, label: "l")
+                                whenLastCard(isLast: isLast)
+                            } else {
+                                offset = .zero // もとに戻す
+                            }
+                        }
+                    }
+            )
     }
-}
-
-#Preview {
-    CardView()
+    
+    func send_label(userId: String, esmId: Int, label: String){
+        apiService.sendLabel(userId: userId, esmId: esmId, label: label) { result in
+            switch result {
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print("APIエラー: \(error)")
+            }
+        }
+    }
+    
+    func whenLastCard(isLast: Bool){
+        if isLast{
+            esmState = false
+            defaults.set(false, forKey: "esmState")
+            print("last")
+        }
+    }
 }

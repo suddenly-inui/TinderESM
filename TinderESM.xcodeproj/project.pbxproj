@@ -11,6 +11,11 @@
 		9601D5022AC0766D00B81FCB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D5012AC0766D00B81FCB /* ContentView.swift */; };
 		9601D5042AC0766E00B81FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9601D5032AC0766E00B81FCB /* Assets.xcassets */; };
 		9601D5072AC0766E00B81FCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9601D5062AC0766E00B81FCB /* Preview Assets.xcassets */; };
+		9601D5132AC076F500B81FCB /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D5122AC076F500B81FCB /* CardStackView.swift */; };
+		9601D5152AC0770100B81FCB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D5142AC0770100B81FCB /* CardView.swift */; };
+		9601D5172AC0770C00B81FCB /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D5162AC0770C00B81FCB /* CardViewModel.swift */; };
+		9601D5192AC0771C00B81FCB /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D5182AC0771C00B81FCB /* ApiService.swift */; };
+		9601D51B2AC08D3F00B81FCB /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D51A2AC08D3F00B81FCB /* NotificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		9601D5012AC0766D00B81FCB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9601D5032AC0766E00B81FCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9601D5062AC0766E00B81FCB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9601D5122AC076F500B81FCB /* CardStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackView.swift; sourceTree = "<group>"; };
+		9601D5142AC0770100B81FCB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		9601D5162AC0770C00B81FCB /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		9601D5182AC0771C00B81FCB /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		9601D51A2AC08D3F00B81FCB /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,11 @@
 		9601D4FE2AC0766D00B81FCB /* TinderESM */ = {
 			isa = PBXGroup;
 			children = (
+				9601D5112AC0769D00B81FCB /* Models */,
+				9601D5102AC0769600B81FCB /* ViewModels */,
+				9601D50F2AC0768E00B81FCB /* Views */,
+				9601D50E2AC0768800B81FCB /* Networkings */,
+				9601D50D2AC0767D00B81FCB /* Resources */,
 				9601D4FF2AC0766D00B81FCB /* TinderESMApp.swift */,
 				9601D5012AC0766D00B81FCB /* ContentView.swift */,
 				9601D5032AC0766E00B81FCB /* Assets.xcassets */,
@@ -65,6 +80,46 @@
 				9601D5062AC0766E00B81FCB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9601D50D2AC0767D00B81FCB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9601D50E2AC0768800B81FCB /* Networkings */ = {
+			isa = PBXGroup;
+			children = (
+				9601D5182AC0771C00B81FCB /* ApiService.swift */,
+				9601D51A2AC08D3F00B81FCB /* NotificationService.swift */,
+			);
+			path = Networkings;
+			sourceTree = "<group>";
+		};
+		9601D50F2AC0768E00B81FCB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9601D5122AC076F500B81FCB /* CardStackView.swift */,
+				9601D5142AC0770100B81FCB /* CardView.swift */,
+				9601D5162AC0770C00B81FCB /* CardViewModel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9601D5102AC0769600B81FCB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9601D5112AC0769D00B81FCB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +192,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9601D5132AC076F500B81FCB /* CardStackView.swift in Sources */,
 				9601D5022AC0766D00B81FCB /* ContentView.swift in Sources */,
+				9601D51B2AC08D3F00B81FCB /* NotificationService.swift in Sources */,
+				9601D5192AC0771C00B81FCB /* ApiService.swift in Sources */,
+				9601D5152AC0770100B81FCB /* CardView.swift in Sources */,
 				9601D5002AC0766D00B81FCB /* TinderESMApp.swift in Sources */,
+				9601D5172AC0770C00B81FCB /* CardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
