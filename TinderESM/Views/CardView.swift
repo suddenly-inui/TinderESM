@@ -24,13 +24,29 @@ struct CardView: View {
                     }
                     .onEnded { gesture in
                         withAnimation(.linear(duration: 0.2)) {
-                            if gesture.translation.width > 100 {
-                                offset.width = 300 // 右にスワイプ
+                            print(gesture.translation.width)
+                            print(gesture.translation.height)
+                            if gesture.translation.width > 100 && gesture.translation.height > 100 {
+                                offset.width = 500
+                                offset.height = 500
+                                send_label(userId: "999", esmId: esm.esm_id, label: "rd")
+                                whenLastCard(isLast: isLast)
+                            } else if gesture.translation.width < -100 && gesture.translation.height > 100 {
+                                offset.width = -500
+                                offset.height = 500
+                                send_label(userId: "999", esmId: esm.esm_id, label: "ld")
+                                whenLastCard(isLast: isLast)
+                            } else if gesture.translation.width > 100 {
+                                offset.width = 500 // 右にスワイプ
                                 send_label(userId: "999", esmId: esm.esm_id, label: "r")
                                 whenLastCard(isLast: isLast)
                             } else if gesture.translation.width < -100 {
-                                offset.width = -300 // 左にスワイプ
+                                offset.width = -500 // 左にスワイプ
                                 send_label(userId: "999", esmId: esm.esm_id, label: "l")
+                                whenLastCard(isLast: isLast)
+                            }else if gesture.translation.height > 100 {
+                                offset.height = 500
+                                send_label(userId: "999", esmId: esm.esm_id, label: "d")
                                 whenLastCard(isLast: isLast)
                             } else {
                                 offset = .zero // もとに戻す
