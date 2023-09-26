@@ -5,6 +5,7 @@ struct ContentView: View {
     @State private var esmState: Bool = false
     @State private var esmShownFlag: Bool = false
     @State private var selectedTab: Int = 2
+    @State private var id_username_set = false
     
     let apiService = APIService()
     let defaults = UserDefaults.standard
@@ -12,63 +13,67 @@ struct ContentView: View {
     
     @Environment(\.scenePhase) private var scenePhase
     var body: some View {
-        ZStack{
-            NavigationView {
-                TabView(selection: $selectedTab) {
-                    // ここに各タブのコンテンツを追加します
-                    VStack{
-                        Text("serverEsmState: \(String(serverEsmState))")
-                        Text("esmState: \(String(esmState))")
-                    }
+        if !id_username_set && (defaults.string(forKey: "userId") == "" || defaults.string(forKey: "username") == "") {
+            IdInputView(id_username_set: $id_username_set)
+        }else{
+            ZStack{
+                NavigationView {
+                    TabView(selection: $selectedTab) {
+                        // ここに各タブのコンテンツを追加します
+                        ProfileView()
                         .tabItem {
-                            Image(systemName: "1.square.fill")
-                            Text("タブ1")
+                            Image(systemName: "person.fill")
+                            Text("Profile")
                         }
                         .tag(1)
-                    
-                    CardStackView(esmState: $esmState, selectedTab: $selectedTab)
-                        .tabItem {
-                            Image(systemName: "2.square.fill")
-                            Text("タブ2")
-                        }
-                        .tag(2)
-                    
-                    Text("ゲーミフィケーションの何か")
-                        .tabItem {
-                            Image(systemName: "3.square.fill")
-                            Text("タブ3")
-                        }
-                        .tag(3)
+                        
+                        CardStackView(esmState: $esmState, selectedTab: $selectedTab)
+                            .tabItem {
+                                Image(systemName: "lanyardcard.fill")
+                                Text("ESM")
+                            }
+                            .tag(2)
+                        
+                        Text("ゲーミフィケーションの何か")
+                            .tabItem {
+                                Image(systemName: "dollarsign")
+                                Text("Progress")
+                            }
+                            .tag(3)
+                    }
+                    .navigationBarTitle("Tinder ESM")
+                    .navigationBarItems(
+                        trailing:
+                            Button(action: {
+                                fetchEsmState()
+                            }) {
+                                Image(systemName: "arrow.triangle.2.circlepath")
+                            }
+                    )
                 }
-                .navigationBarTitle("Tinder ESM")
-                .navigationBarItems(
-                    trailing:
-                        Button(action: {
-                            fetchEsmState()
-                        }) {
-                            Image(systemName: "arrow.triangle.2.circlepath")
-                        }
-                )
             }
-        }
-        .onAppear{
-            print("\nApp")
-            notificationService.requestNotificationPermission()
             
-            if defaults.object(forKey: "init") == nil {
-                defaults.set(false, forKey: "esmState")
-                defaults.set("", forKey: "userId")
-                defaults.set(false, forKey: "esmShownFlag")
-                defaults.set(true, forKey: "init")
+            
+            .onAppear{
+                print("\nApp")
+                notificationService.requestNotificationPermission()
+                
+                if defaults.object(forKey: "init") == nil {
+                    defaults.set(false, forKey: "esmState")
+                    defaults.set("", forKey: "userId")
+                    defaults.set("", forKey: "username")
+                    defaults.set(false, forKey: "esmShownFlag")
+                    defaults.set(true, forKey: "init")
+                }
             }
-        }
-        .onChange(of: scenePhase) {
-            if scenePhase == .active {
+            .onChange(of: scenePhase) {
+                if scenePhase == .active {
+                    fetchEsmState()
+                }
+            }
+            .onChange(of: selectedTab) {
                 fetchEsmState()
             }
-        }
-        .onChange(of: selectedTab) {
-            fetchEsmState()
         }
     }
     
