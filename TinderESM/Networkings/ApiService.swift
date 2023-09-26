@@ -52,6 +52,23 @@ class APIService {
         }
         task.resume()
     }
+    
+    func sendUser(userId: String, userName: String, completion: @escaping (Result<SendUserOverload, Error>) -> Void) {
+        let url = URL(string: baseUrl + "send_user?user_id=\(userId)&user_name=\(userName)")!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let data = data {
+                do {
+                    let decodedData = try JSONDecoder().decode(SendUserOverload.self, from: data)
+                    completion(.success(decodedData))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+        }
+        task.resume()
+    }
 
 }
 
@@ -67,5 +84,11 @@ struct Esm: Codable {
 
 struct SendLabelOverload: Codable {
     let label: String
+    let success: Bool
+}
+
+struct SendUserOverload: Codable {
+    let user_id: String
+    let user_name: String
     let success: Bool
 }
