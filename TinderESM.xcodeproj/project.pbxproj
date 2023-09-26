@@ -16,6 +16,8 @@
 		9601D5172AC0770C00B81FCB /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D5162AC0770C00B81FCB /* CardViewModel.swift */; };
 		9601D5192AC0771C00B81FCB /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D5182AC0771C00B81FCB /* ApiService.swift */; };
 		9601D51B2AC08D3F00B81FCB /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D51A2AC08D3F00B81FCB /* NotificationService.swift */; };
+		9601D51D2AC2D5F000B81FCB /* IdInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D51C2AC2D5F000B81FCB /* IdInputView.swift */; };
+		962329EB2AC32F2C00935F17 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962329EA2AC32F2C00935F17 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		9601D5162AC0770C00B81FCB /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		9601D5182AC0771C00B81FCB /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		9601D51A2AC08D3F00B81FCB /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		9601D51C2AC2D5F000B81FCB /* IdInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdInputView.swift; sourceTree = "<group>"; };
+		962329EA2AC32F2C00935F17 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				9601D5122AC076F500B81FCB /* CardStackView.swift */,
 				9601D5142AC0770100B81FCB /* CardView.swift */,
 				9601D5162AC0770C00B81FCB /* CardViewModel.swift */,
+				9601D51C2AC2D5F000B81FCB /* IdInputView.swift */,
+				962329EA2AC32F2C00935F17 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,9 +199,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9601D5132AC076F500B81FCB /* CardStackView.swift in Sources */,
+				962329EB2AC32F2C00935F17 /* ProfileView.swift in Sources */,
 				9601D5022AC0766D00B81FCB /* ContentView.swift in Sources */,
 				9601D51B2AC08D3F00B81FCB /* NotificationService.swift in Sources */,
 				9601D5192AC0771C00B81FCB /* ApiService.swift in Sources */,
+				9601D51D2AC2D5F000B81FCB /* IdInputView.swift in Sources */,
 				9601D5152AC0770100B81FCB /* CardView.swift in Sources */,
 				9601D5002AC0766D00B81FCB /* TinderESMApp.swift in Sources */,
 				9601D5172AC0770C00B81FCB /* CardViewModel.swift in Sources */,
