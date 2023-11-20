@@ -14,10 +14,10 @@ struct ProfileView: View {
         VStack{
             Text("\(defaults.string(forKey: "userId")!)")
             Text("\(defaults.string(forKey: "username")!)")
+            Text("\(defaults.string(forKey: "deviceId")!)")
+            Text("Started at \(defaults.string(forKey: "startedDate")!)")
+            Text("Ends at \(defaults.string(forKey: "endDate")!)")
         }
     }
 }
 
-#Preview {
-    ProfileView()
-}

@@ -11,13 +11,13 @@
 		9601D5022AC0766D00B81FCB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D5012AC0766D00B81FCB /* ContentView.swift */; };
 		9601D5042AC0766E00B81FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9601D5032AC0766E00B81FCB /* Assets.xcassets */; };
 		9601D5072AC0766E00B81FCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9601D5062AC0766E00B81FCB /* Preview Assets.xcassets */; };
-		9601D5132AC076F500B81FCB /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D5122AC076F500B81FCB /* CardStackView.swift */; };
-		9601D5152AC0770100B81FCB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D5142AC0770100B81FCB /* CardView.swift */; };
-		9601D5172AC0770C00B81FCB /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D5162AC0770C00B81FCB /* CardViewModel.swift */; };
 		9601D5192AC0771C00B81FCB /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D5182AC0771C00B81FCB /* ApiService.swift */; };
 		9601D51B2AC08D3F00B81FCB /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D51A2AC08D3F00B81FCB /* NotificationService.swift */; };
 		9601D51D2AC2D5F000B81FCB /* IdInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D51C2AC2D5F000B81FCB /* IdInputView.swift */; };
 		962329EB2AC32F2C00935F17 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962329EA2AC32F2C00935F17 /* ProfileView.swift */; };
+		96B506FA2AFF754500806A4A /* EsmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B506F92AFF754500806A4A /* EsmView.swift */; };
+		96B506FC2AFF86BC00806A4A /* RadioSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B506FB2AFF86BC00806A4A /* RadioSelectView.swift */; };
+		96D690D22B0B69FF00A8BABC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 96D690D12B0B69FF00A8BABC /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,13 +26,15 @@
 		9601D5012AC0766D00B81FCB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9601D5032AC0766E00B81FCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9601D5062AC0766E00B81FCB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9601D5122AC076F500B81FCB /* CardStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackView.swift; sourceTree = "<group>"; };
-		9601D5142AC0770100B81FCB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		9601D5162AC0770C00B81FCB /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		9601D5182AC0771C00B81FCB /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		9601D51A2AC08D3F00B81FCB /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		9601D51C2AC2D5F000B81FCB /* IdInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdInputView.swift; sourceTree = "<group>"; };
 		962329EA2AC32F2C00935F17 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		9668C6722AD55F54001E32A4 /* TinderESM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TinderESM.entitlements; sourceTree = "<group>"; };
+		9668C6732AD55FFA001E32A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		96B506F92AFF754500806A4A /* EsmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsmView.swift; sourceTree = "<group>"; };
+		96B506FB2AFF86BC00806A4A /* RadioSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioSelectView.swift; sourceTree = "<group>"; };
+		96D690D12B0B69FF00A8BABC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 		9601D4F32AC0766D00B81FCB = {
 			isa = PBXGroup;
 			children = (
+				96D690D12B0B69FF00A8BABC /* README.md */,
 				9601D4FE2AC0766D00B81FCB /* TinderESM */,
 				9601D4FD2AC0766D00B81FCB /* Products */,
 			);
@@ -65,8 +68,8 @@
 		9601D4FE2AC0766D00B81FCB /* TinderESM */ = {
 			isa = PBXGroup;
 			children = (
-				9601D5112AC0769D00B81FCB /* Models */,
-				9601D5102AC0769600B81FCB /* ViewModels */,
+				9668C6732AD55FFA001E32A4 /* Info.plist */,
+				9668C6722AD55F54001E32A4 /* TinderESM.entitlements */,
 				9601D50F2AC0768E00B81FCB /* Views */,
 				9601D50E2AC0768800B81FCB /* Networkings */,
 				9601D50D2AC0767D00B81FCB /* Resources */,
@@ -105,27 +108,12 @@
 		9601D50F2AC0768E00B81FCB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9601D5122AC076F500B81FCB /* CardStackView.swift */,
-				9601D5142AC0770100B81FCB /* CardView.swift */,
-				9601D5162AC0770C00B81FCB /* CardViewModel.swift */,
 				9601D51C2AC2D5F000B81FCB /* IdInputView.swift */,
 				962329EA2AC32F2C00935F17 /* ProfileView.swift */,
+				96B506F92AFF754500806A4A /* EsmView.swift */,
+				96B506FB2AFF86BC00806A4A /* RadioSelectView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		9601D5102AC0769600B81FCB /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		9601D5112AC0769D00B81FCB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D690D22B0B69FF00A8BABC /* README.md in Resources */,
 				9601D5072AC0766E00B81FCB /* Preview Assets.xcassets in Resources */,
 				9601D5042AC0766E00B81FCB /* Assets.xcassets in Resources */,
 			);
@@ -198,15 +187,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9601D5132AC076F500B81FCB /* CardStackView.swift in Sources */,
 				962329EB2AC32F2C00935F17 /* ProfileView.swift in Sources */,
 				9601D5022AC0766D00B81FCB /* ContentView.swift in Sources */,
 				9601D51B2AC08D3F00B81FCB /* NotificationService.swift in Sources */,
 				9601D5192AC0771C00B81FCB /* ApiService.swift in Sources */,
 				9601D51D2AC2D5F000B81FCB /* IdInputView.swift in Sources */,
-				9601D5152AC0770100B81FCB /* CardView.swift in Sources */,
 				9601D5002AC0766D00B81FCB /* TinderESMApp.swift in Sources */,
-				9601D5172AC0770C00B81FCB /* CardViewModel.swift in Sources */,
+				96B506FA2AFF754500806A4A /* EsmView.swift in Sources */,
+				96B506FC2AFF86BC00806A4A /* RadioSelectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,12 +325,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TinderESM/TinderESM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TinderESM/Preview Content\"";
-				DEVELOPMENT_TEAM = N9L55J9YJ6;
+				DEVELOPMENT_TEAM = UP3X8989C7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TinderESM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -353,7 +343,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.inuiyuki0904.TinderESM;
+				PRODUCT_BUNDLE_IDENTIFIER = wipterm.slash.jn.com.TinderESM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -366,12 +356,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TinderESM/TinderESM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TinderESM/Preview Content\"";
-				DEVELOPMENT_TEAM = N9L55J9YJ6;
+				DEVELOPMENT_TEAM = UP3X8989C7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TinderESM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -382,7 +374,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.inuiyuki0904.TinderESM;
+				PRODUCT_BUNDLE_IDENTIFIER = wipterm.slash.jn.com.TinderESM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

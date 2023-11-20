@@ -1,4 +1,6 @@
 import SwiftUI
+import UserNotifications
+
 
 struct CardStackView: View {
     @ObservedObject var cardViewModel = CardViewModel()
@@ -9,6 +11,7 @@ struct CardStackView: View {
     @Binding var selectedTab: Int
     
     let apiService = APIService()
+    let application = UIApplication.shared
     
     var body: some View {
         ZStack {

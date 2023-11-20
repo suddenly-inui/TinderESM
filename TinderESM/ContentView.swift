@@ -6,6 +6,7 @@ struct ContentView: View {
     @State private var esmShownFlag: Bool = false
     @State private var selectedTab: Int = 2
     @State private var id_username_set = false
+    @State private var showModal = false
     
     let apiService = APIService()
     let defaults = UserDefaults.standard
@@ -14,20 +15,20 @@ struct ContentView: View {
     @Environment(\.scenePhase) private var scenePhase
     var body: some View {
         if !id_username_set && (defaults.string(forKey: "userId") == "" || defaults.string(forKey: "username") == "") {
-            IdInputView(id_username_set: $id_username_set)
+            IdInputView(id_username_set: $id_username_set, showModal: $showModal)
         }else{
             ZStack{
                 NavigationView {
                     TabView(selection: $selectedTab) {
                         // ここに各タブのコンテンツを追加します
                         ProfileView()
-                        .tabItem {
-                            Image(systemName: "person.fill")
-                            Text("Profile")
-                        }
-                        .tag(1)
+                            .tabItem {
+                                Image(systemName: "person.fill")
+                                Text("Profile")
+                            }
+                            .tag(1)
                         
-                        CardStackView(esmState: $esmState, selectedTab: $selectedTab)
+                        EsmView(esmState: $esmState)
                             .tabItem {
                                 Image(systemName: "lanyardcard.fill")
                                 Text("ESM")
@@ -41,7 +42,7 @@ struct ContentView: View {
                             }
                             .tag(3)
                     }
-                    .navigationBarTitle("Tinder ESM")
+                    .navigationBarTitle("ESM")
                     .navigationBarItems(
                         trailing:
                             Button(action: {
@@ -52,8 +53,11 @@ struct ContentView: View {
                     )
                 }
             }
-            
-            
+            .sheet(isPresented: $showModal) {
+                        Text("ユーザーIDを確認後、アプリをダウンロードし直してください。")
+                            .interactiveDismissDisabled()
+                            .padding()
+                    }
             .onAppear{
                 print("\nApp")
                 notificationService.requestNotificationPermission()
@@ -63,16 +67,23 @@ struct ContentView: View {
                     defaults.set("", forKey: "userId")
                     defaults.set("", forKey: "username")
                     defaults.set(false, forKey: "esmShownFlag")
+                    defaults.set("", forKey: "curveType")
                     defaults.set(true, forKey: "init")
                 }
             }
             .onChange(of: scenePhase) {
                 if scenePhase == .active {
                     fetchEsmState()
+                    if selectedTab == 2 {
+                        deleteNotificationBadge()
+                    }
                 }
             }
             .onChange(of: selectedTab) {
                 fetchEsmState()
+                if selectedTab == 2 {
+                    deleteNotificationBadge()
+                }
             }
         }
     }
@@ -103,8 +114,16 @@ struct ContentView: View {
             }
         }
     }
-}
-
-#Preview {
-    ContentView()
+    
+    func deleteNotificationBadge(){
+        UNUserNotificationCenter.current().setBadgeCount(0, withCompletionHandler: { error in
+            if let error = error {
+                // エラーハンドリングを行う
+                print("バッジを削除しました：\(error.localizedDescription)")
+            } else {
+                // バッジの設定が成功した場合の処理を行う
+                print("バッジを削除できませんでした")
+            }
+        })
+    }
 }

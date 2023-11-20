@@ -36,8 +36,9 @@ class APIService {
         task.resume()
     }
     
-    func sendLabel(userId: String, esmId: Int, label: String, completion: @escaping (Result<SendLabelOverload, Error>) -> Void) {
-        let url = URL(string: baseUrl + "send_label?user_id=\(userId)&esm_id=\(esmId)&label=\(label)")!
+    func sendLabel(userId: String, esmId: Int, labels: [String], completion: @escaping (Result<SendLabelOverload, Error>) -> Void) {
+        let labelString =  labels.joined(separator: "")
+        let url = URL(string: baseUrl + "send_label?user_id=\(userId)&esm_id=\(esmId)&label=\(labelString)")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
@@ -53,8 +54,8 @@ class APIService {
         task.resume()
     }
     
-    func sendUser(userId: String, userName: String, completion: @escaping (Result<SendUserOverload, Error>) -> Void) {
-        let url = URL(string: baseUrl + "send_user?user_id=\(userId)&user_name=\(userName)")!
+    func sendUser(userId: String, userName: String, device_id: String, completion: @escaping (Result<SendUserOverload, Error>) -> Void) {
+        let url = URL(string: baseUrl + "send_user?user_id=\(userId)&user_name=\(userName)&device_id=\(device_id)")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
@@ -90,5 +91,6 @@ struct SendLabelOverload: Codable {
 struct SendUserOverload: Codable {
     let user_id: String
     let user_name: String
+    let device_id: String
     let success: Bool
 }
