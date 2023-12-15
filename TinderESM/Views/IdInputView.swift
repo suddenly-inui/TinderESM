@@ -4,10 +4,11 @@ import Combine
 struct IdInputView: View {
     @State private var _id: String = ""
     @State private var _username: String = ""
+    @State private var _aware_id: String = ""
     @Binding var id_username_set: Bool
     @Binding var showModal: Bool
 
-    @State var curveType = ""
+    @State var moneyType = ""
     
     let defaults = UserDefaults.standard
     let apiService = APIService()
@@ -16,7 +17,7 @@ struct IdInputView: View {
         VStack {
             Text("情報を入力してね")
             HStack{
-                Text("ID: ")
+                Text("ID:")
                 Spacer()
                 TextField("ID", text: $_id)
                     .padding()
@@ -33,7 +34,7 @@ struct IdInputView: View {
             .padding()
             
             HStack{
-                Text("UserName: ")
+                Text("UserName:")
                 Spacer()
                 TextField("username", text: $_username)
                     .padding()
@@ -50,36 +51,51 @@ struct IdInputView: View {
             }
             .padding()
             
+            HStack{
+                Text("Aware device id: ")
+                Spacer()
+                TextField("aware", text: $_aware_id)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.default)
+                    .frame(width: 200, alignment: .trailing)
+            }
+            .padding()
+            
             Button(action: {
-                if _id != "" && _username != ""{
-                    apiService.sendUser(userId: _id, userName: _username, device_id: defaults.string(forKey: "deviceId")!){result in
+                if _id != "" && _username != "" && _aware_id != ""{
+                    
+                    //開始日、終了日を決定
+                    let japanTZ = TimeZone(identifier: "Asia/Tokyo")!
+                    let startedDate = getCurrentDateWithTimeZone(timeZone: japanTZ)
+                    let endDate = addDaysToDate(dateString: startedDate, timeZone: japanTZ, add: 14)
+                    defaults.set(startedDate, forKey: "startedDate")
+                    defaults.set(endDate!, forKey: "endDate")
+                    
+                    if _id.starts(with: "0"){
+                        moneyType = "up"
+                    }else if _id.starts(with: "1"){
+                        moneyType = "dn"
+                    }else if _id.starts(with: "2"){
+                        moneyType = "mid"
+                    }else if _id.starts(with: "3"){
+                        moneyType = "line"
+                    }else {
+                        moneyType = "error"
+                        showModal = true
+                    }
+                    
+                    
+                    apiService.sendUser(userId: _id, userName: _username, device_id: defaults.string(forKey: "deviceId")!, aware_id: _aware_id, start_date: startedDate, end_date: endDate!, money_type: moneyType){result in
                         switch result {
                         case .success(let data):
-                            let japanTZ = TimeZone(identifier: "Asia/Tokyo")!
-                            let startedDate = getCurrentDateWithTimeZone(timeZone: japanTZ)
-                            let endDate = addDaysToDate(dateString: startedDate, timeZone: japanTZ, add: 21)
-                            defaults.set(startedDate, forKey: "startedDate")
-                            defaults.set(endDate!, forKey: "endDate")
+                            
                             defaults.set(_id, forKey: "userId")
                             defaults.set(_username, forKey: "username")
+                            defaults.set(_aware_id, forKey: "awareId")
+                            defaults.set(moneyType, forKey: "moneyType")
+                            
                             id_username_set = true
-                            
-                            let userId = defaults.string(forKey: "userId")!
-                            if userId.starts(with: "0"){
-                                curveType = "up"
-                            }else if userId.starts(with: "1"){
-                                curveType = "dn"
-                            }else if userId.starts(with: "2"){
-                                curveType = "mid"
-                            }else if userId.starts(with: "3"){
-                                curveType = "line"
-                            }else {
-                                curveType = "error"
-                                showModal = true
-                            }
-                            
-                            defaults.set(curveType, forKey: "curveType")
-                            
                             print("ユーザー情報を送信：id: \(data.user_id), username: \(data.user_id), deviceId: \(data.device_id), success: \(data.success)")
                         case .failure(let error):
                             print("APIエラー: \(error)")
@@ -97,7 +113,7 @@ struct IdInputView: View {
         let currentDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = timeZone
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         
         return dateFormatter.string(from: currentDate)
     }
@@ -105,7 +121,7 @@ struct IdInputView: View {
     func addDaysToDate(dateString: String, timeZone: TimeZone, add: Int) -> String? {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = timeZone
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         
         if let inputDate = dateFormatter.date(from: dateString) {
             // Add 10 days to the input date

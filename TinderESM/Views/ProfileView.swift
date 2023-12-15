@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ProfileView: View {
     let defaults = UserDefaults.standard
-    @State var a = ""
+    
+    @State var totalReward = 0
     var body: some View {
         VStack{
             Text("\(defaults.string(forKey: "userId")!)")
@@ -17,6 +18,11 @@ struct ProfileView: View {
             Text("\(defaults.string(forKey: "deviceId")!)")
             Text("Started at \(defaults.string(forKey: "startedDate")!)")
             Text("Ends at \(defaults.string(forKey: "endDate")!)")
+            Text("Your Reward: \(totalReward)")
+        }
+        .onAppear{
+            totalReward = defaults.integer(forKey: "totalReward")
+            print("reward updated")
         }
     }
 }

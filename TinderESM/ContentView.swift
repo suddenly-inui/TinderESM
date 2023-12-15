@@ -3,10 +3,10 @@ import SwiftUI
 struct ContentView: View {
     @State private var serverEsmState: Bool = false
     @State private var esmState: Bool = false
-    @State private var esmShownFlag: Bool = false
     @State private var selectedTab: Int = 2
     @State private var id_username_set = false
     @State private var showModal = false
+    @State private var esmId = ""
     
     let apiService = APIService()
     let defaults = UserDefaults.standard
@@ -28,14 +28,14 @@ struct ContentView: View {
                             }
                             .tag(1)
                         
-                        EsmView(esmState: $esmState)
+                        EsmView(esmState: $esmState, esmId: $esmId)
                             .tabItem {
                                 Image(systemName: "lanyardcard.fill")
                                 Text("ESM")
                             }
                             .tag(2)
                         
-                        Text("ゲーミフィケーションの何か")
+                        MoneyView()
                             .tabItem {
                                 Image(systemName: "dollarsign")
                                 Text("Progress")
@@ -64,11 +64,13 @@ struct ContentView: View {
                 
                 if defaults.object(forKey: "init") == nil {
                     defaults.set(false, forKey: "esmState")
+                    defaults.set("", forKey: "lastEsmId")
                     defaults.set("", forKey: "userId")
                     defaults.set("", forKey: "username")
-                    defaults.set(false, forKey: "esmShownFlag")
-                    defaults.set("", forKey: "curveType")
+                    defaults.set("", forKey: "moneyType")
                     defaults.set(true, forKey: "init")
+                    defaults.set("", forKey: "awareId")
+                    defaults.set(0, forKey: "totalReward")
                 }
             }
             .onChange(of: scenePhase) {
@@ -94,21 +96,21 @@ struct ContentView: View {
             case .success(let data):
                 print(data)
                 serverEsmState = data.active
+                esmId = data.idx
+                
                 if serverEsmState {
-                    if !defaults.bool(forKey: "esmShownFlag") {
+                    if defaults.string(forKey: "lastEsmId") == data.idx{
+                        esmState = false
+                        defaults.set(false, forKey: "esmState")
+                    }else{
                         esmState = true
-                        esmShownFlag = true
                         defaults.set(true, forKey: "esmState")
-                        defaults.set(true, forKey: "esmShownFlag")
-                    } else {
-                        esmState = defaults.bool(forKey: "esmState")
                     }
                 } else {
                     esmState = false
-                    esmShownFlag = false
                     defaults.set(false, forKey: "esmState")
-                    defaults.set(false, forKey: "esmShownFlag")
                 }
+                
             case .failure(let error):
                 print("APIエラー: \(error)")
             }

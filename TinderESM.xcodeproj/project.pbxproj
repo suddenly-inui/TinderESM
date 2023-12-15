@@ -18,6 +18,8 @@
 		96B506FA2AFF754500806A4A /* EsmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B506F92AFF754500806A4A /* EsmView.swift */; };
 		96B506FC2AFF86BC00806A4A /* RadioSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B506FB2AFF86BC00806A4A /* RadioSelectView.swift */; };
 		96D690D22B0B69FF00A8BABC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 96D690D12B0B69FF00A8BABC /* README.md */; };
+		96D690D42B26DA1D00A8BABC /* MoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D690D32B26DA1D00A8BABC /* MoneyView.swift */; };
+		96D690D82B29D7B100A8BABC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D690D72B29D7B100A8BABC /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		96B506F92AFF754500806A4A /* EsmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsmView.swift; sourceTree = "<group>"; };
 		96B506FB2AFF86BC00806A4A /* RadioSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioSelectView.swift; sourceTree = "<group>"; };
 		96D690D12B0B69FF00A8BABC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		96D690D32B26DA1D00A8BABC /* MoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyView.swift; sourceTree = "<group>"; };
+		96D690D72B29D7B100A8BABC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		9601D4FE2AC0766D00B81FCB /* TinderESM */ = {
 			isa = PBXGroup;
 			children = (
+				96D690D72B29D7B100A8BABC /* GoogleService-Info.plist */,
 				9668C6732AD55FFA001E32A4 /* Info.plist */,
 				9668C6722AD55F54001E32A4 /* TinderESM.entitlements */,
 				9601D50F2AC0768E00B81FCB /* Views */,
@@ -112,6 +117,7 @@
 				962329EA2AC32F2C00935F17 /* ProfileView.swift */,
 				96B506F92AFF754500806A4A /* EsmView.swift */,
 				96B506FB2AFF86BC00806A4A /* RadioSelectView.swift */,
+				96D690D32B26DA1D00A8BABC /* MoneyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96D690D22B0B69FF00A8BABC /* README.md in Resources */,
+				96D690D82B29D7B100A8BABC /* GoogleService-Info.plist in Resources */,
 				9601D5072AC0766E00B81FCB /* Preview Assets.xcassets in Resources */,
 				9601D5042AC0766E00B81FCB /* Assets.xcassets in Resources */,
 			);
@@ -190,6 +197,7 @@
 				962329EB2AC32F2C00935F17 /* ProfileView.swift in Sources */,
 				9601D5022AC0766D00B81FCB /* ContentView.swift in Sources */,
 				9601D51B2AC08D3F00B81FCB /* NotificationService.swift in Sources */,
+				96D690D42B26DA1D00A8BABC /* MoneyView.swift in Sources */,
 				9601D5192AC0771C00B81FCB /* ApiService.swift in Sources */,
 				9601D51D2AC2D5F000B81FCB /* IdInputView.swift in Sources */,
 				9601D5002AC0766D00B81FCB /* TinderESMApp.swift in Sources */,

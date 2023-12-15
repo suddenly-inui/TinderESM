@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct RadioSelectView: View {
+    @Binding var esm: Esm
     @Binding var selectOptions: [String]
     @Binding var selectedIndex: Int
     
     var body: some View {
         HStack{
-            Text("MaxLabel")
+            Text(esm.max_label)
             ForEach(0..<selectOptions.count, id: \.self, content: { index in
                 VStack {
                     Text(selectOptions[index])
@@ -25,7 +26,7 @@ struct RadioSelectView: View {
                     selectedIndex = index
                 }
             })
-            Text("MinLabel")
+            Text(esm.min_label)
         }
     }
 }

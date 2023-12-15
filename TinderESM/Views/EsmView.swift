@@ -11,9 +11,12 @@ struct EsmView: View {
     let apiService = APIService()
     let defaults = UserDefaults.standard
     
+    // この変数で報酬額を管理。
+    @State var money: Int = 0
     
     @State var esm: [Esm] = []
     @Binding var esmState: Bool
+    @Binding var esmId: String
     
     
     @State var ans: [String] = [""]
@@ -27,10 +30,11 @@ struct EsmView: View {
             if esmState {
                 if esm.count > 1 {
                     Text("Q\(esm[qidx].esm_id)")
+                    Text("\(money/esm.count)円")
                     Text(esm[qidx].content)
+                    RadioSelectView(esm: $esm[qidx], selectOptions: $selectOptions, selectedIndex: $selectedIndex)
                 }
                 
-                RadioSelectView(selectOptions: $selectOptions, selectedIndex: $selectedIndex)
                 
                 HStack{
                     if qidx != 0{
@@ -59,9 +63,12 @@ struct EsmView: View {
                             print(ans)
                             if !ans.contains(""){
                                 print("submit")
-                                send_label(userId: defaults.string(forKey: "userId")!, esmId: 1, labels: ans)
+                                send_label(userId: defaults.string(forKey: "userId")!, esmId: 1, labels: ans, money: money)
+                                defaults.set(esmId, forKey: "lastEsmId")
                                 esmState = false
                                 defaults.set(false, forKey: "esmState")
+                                let total_reward = defaults.integer(forKey: "totalReward")
+                                defaults.set(total_reward+money, forKey: "totalReward")
                             }else{
                                 qidx = 0
                                 ans =  Array(repeating: "", count: esm.count)
@@ -78,22 +85,23 @@ struct EsmView: View {
         }
         .onAppear{
             if esmState{
-                fetchEsm()
+                fetchEsm(user_id: defaults.string(forKey: "userId")!)
             }
         }
         .onChange(of: esmState){
             if esmState{
-                fetchEsm()
+                fetchEsm(user_id: defaults.string(forKey: "userId")!)
             }
         }
     }
     
-    func fetchEsm(){
-        apiService.fetchEsm { result in
+    func fetchEsm(user_id: String){
+        apiService.fetchEsm(user_id: user_id){ result in
             switch result {
             case .success(let data):
                 print(data)
-                esm = data
+                esm = data.esm
+                money = data.money
                 ans = Array(repeating: "", count: esm.count)
             case .failure(let error):
                 print("APIエラー: \(error)")
@@ -101,8 +109,8 @@ struct EsmView: View {
         }
     }
     
-    func send_label(userId: String, esmId: Int, labels: [String]){
-        apiService.sendLabel(userId: userId, esmId: esmId, labels: labels) { result in
+    func send_label(userId: String, esmId: Int, labels: [String], money: Int){
+        apiService.sendLabel(userId: userId, esmId: esmId, labels: labels, money: money) { result in
             switch result {
             case .success(let data):
                 print(data)
