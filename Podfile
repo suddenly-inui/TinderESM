@@ -6,5 +6,8 @@ target 'TinderESM' do
   use_frameworks!
 
   # Pods for TinderESM
+pod 'FirebaseAuth'
+pod 'FirebaseFirestore'
+pod 'FirebaseMessaging'
 
 end

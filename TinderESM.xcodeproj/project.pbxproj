@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521264047251CCC765D4204B /* Pods_TinderESM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6114D2EB9D56FDA892B80E47 /* Pods_TinderESM.framework */; };
 		9601D5002AC0766D00B81FCB /* TinderESMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D4FF2AC0766D00B81FCB /* TinderESMApp.swift */; };
 		9601D5022AC0766D00B81FCB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601D5012AC0766D00B81FCB /* ContentView.swift */; };
 		9601D5042AC0766E00B81FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9601D5032AC0766E00B81FCB /* Assets.xcassets */; };
@@ -17,12 +18,14 @@
 		962329EB2AC32F2C00935F17 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962329EA2AC32F2C00935F17 /* ProfileView.swift */; };
 		96B506FA2AFF754500806A4A /* EsmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B506F92AFF754500806A4A /* EsmView.swift */; };
 		96B506FC2AFF86BC00806A4A /* RadioSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B506FB2AFF86BC00806A4A /* RadioSelectView.swift */; };
+		96BFC2F22B319AAD00BA3418 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96BFC2F12B319AAD00BA3418 /* GoogleService-Info.plist */; };
 		96D690D22B0B69FF00A8BABC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 96D690D12B0B69FF00A8BABC /* README.md */; };
 		96D690D42B26DA1D00A8BABC /* MoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D690D32B26DA1D00A8BABC /* MoneyView.swift */; };
-		96D690D82B29D7B100A8BABC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D690D72B29D7B100A8BABC /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E6019B658FB350D252B6B49 /* Pods-TinderESM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderESM.release.xcconfig"; path = "Target Support Files/Pods-TinderESM/Pods-TinderESM.release.xcconfig"; sourceTree = "<group>"; };
+		6114D2EB9D56FDA892B80E47 /* Pods_TinderESM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinderESM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9601D4FC2AC0766D00B81FCB /* TinderESM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderESM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9601D4FF2AC0766D00B81FCB /* TinderESMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderESMApp.swift; sourceTree = "<group>"; };
 		9601D5012AC0766D00B81FCB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,9 +39,10 @@
 		9668C6732AD55FFA001E32A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		96B506F92AFF754500806A4A /* EsmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsmView.swift; sourceTree = "<group>"; };
 		96B506FB2AFF86BC00806A4A /* RadioSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioSelectView.swift; sourceTree = "<group>"; };
+		96BFC2F12B319AAD00BA3418 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96D690D12B0B69FF00A8BABC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		96D690D32B26DA1D00A8BABC /* MoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyView.swift; sourceTree = "<group>"; };
-		96D690D72B29D7B100A8BABC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FD89D3A08E04C5785F677B22 /* Pods-TinderESM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderESM.debug.xcconfig"; path = "Target Support Files/Pods-TinderESM/Pods-TinderESM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,18 +50,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				521264047251CCC765D4204B /* Pods_TinderESM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8AC19003A8ECDCAD3F1EA37E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6114D2EB9D56FDA892B80E47 /* Pods_TinderESM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9601D4F32AC0766D00B81FCB = {
 			isa = PBXGroup;
 			children = (
 				96D690D12B0B69FF00A8BABC /* README.md */,
 				9601D4FE2AC0766D00B81FCB /* TinderESM */,
 				9601D4FD2AC0766D00B81FCB /* Products */,
+				DEBE0FC31035E020B8B4B871 /* Pods */,
+				8AC19003A8ECDCAD3F1EA37E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,9 +87,9 @@
 		9601D4FE2AC0766D00B81FCB /* TinderESM */ = {
 			isa = PBXGroup;
 			children = (
-				96D690D72B29D7B100A8BABC /* GoogleService-Info.plist */,
 				9668C6732AD55FFA001E32A4 /* Info.plist */,
 				9668C6722AD55F54001E32A4 /* TinderESM.entitlements */,
+				96BFC2F12B319AAD00BA3418 /* GoogleService-Info.plist */,
 				9601D50F2AC0768E00B81FCB /* Views */,
 				9601D50E2AC0768800B81FCB /* Networkings */,
 				9601D50D2AC0767D00B81FCB /* Resources */,
@@ -122,6 +137,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		DEBE0FC31035E020B8B4B871 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD89D3A08E04C5785F677B22 /* Pods-TinderESM.debug.xcconfig */,
+				1E6019B658FB350D252B6B49 /* Pods-TinderESM.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9601D50A2AC0766E00B81FCB /* Build configuration list for PBXNativeTarget "TinderESM" */;
 			buildPhases = (
+				D839D86B3455D637BFDB1002 /* [CP] Check Pods Manifest.lock */,
 				9601D4F82AC0766D00B81FCB /* Sources */,
 				9601D4F92AC0766D00B81FCB /* Frameworks */,
 				9601D4FA2AC0766D00B81FCB /* Resources */,
+				00666D4B6001D0527D8682A0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,13 +207,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				96D690D22B0B69FF00A8BABC /* README.md in Resources */,
-				96D690D82B29D7B100A8BABC /* GoogleService-Info.plist in Resources */,
+				96BFC2F22B319AAD00BA3418 /* GoogleService-Info.plist in Resources */,
 				9601D5072AC0766E00B81FCB /* Preview Assets.xcassets in Resources */,
 				9601D5042AC0766E00B81FCB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00666D4B6001D0527D8682A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinderESM/Pods-TinderESM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinderESM/Pods-TinderESM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TinderESM/Pods-TinderESM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D839D86B3455D637BFDB1002 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinderESM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9601D4F82AC0766D00B81FCB /* Sources */ = {
@@ -330,17 +398,22 @@
 		};
 		9601D50B2AC0766E00B81FCB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD89D3A08E04C5785F677B22 /* Pods-TinderESM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TinderESM/TinderESM.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TinderESM/Preview Content\"";
-				DEVELOPMENT_TEAM = UP3X8989C7;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = UP3X8989C7;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TinderESM/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ESM;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -351,8 +424,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wipterm.slash.jn.com.TinderESM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inui.esm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = esm;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -361,17 +436,22 @@
 		};
 		9601D50C2AC0766E00B81FCB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E6019B658FB350D252B6B49 /* Pods-TinderESM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TinderESM/TinderESM.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TinderESM/Preview Content\"";
-				DEVELOPMENT_TEAM = UP3X8989C7;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = UP3X8989C7;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TinderESM/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ESM;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -382,8 +462,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wipterm.slash.jn.com.TinderESM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inui.esm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = esm;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

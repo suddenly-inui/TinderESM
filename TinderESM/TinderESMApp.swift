@@ -7,6 +7,10 @@
 
 import SwiftUI
 import UIKit
+// import Firebase
+import FirebaseCore
+import FirebaseMessaging
+import UserNotifications
 
 @main
 struct TinderESMApp: App {
@@ -18,16 +22,18 @@ struct TinderESMApp: App {
     }
 }
 
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             print("granted: \(granted)")
             print("error: \(error?.localizedDescription ?? "")")
         }
         UIApplication.shared.registerForRemoteNotifications()
         
+        //FirebaseApp.configure()
+
+
         return true
     }
     
