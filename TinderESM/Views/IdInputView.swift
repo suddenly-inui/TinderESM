@@ -34,7 +34,7 @@ struct IdInputView: View {
             .padding()
             
             HStack{
-                Text("UserName:")
+                Text("UserName: ")
                 Spacer()
                 TextField("username", text: $_username)
                     .padding()
@@ -68,7 +68,7 @@ struct IdInputView: View {
                     //開始日、終了日を決定
                     let japanTZ = TimeZone(identifier: "Asia/Tokyo")!
                     let startedDate = getCurrentDateWithTimeZone(timeZone: japanTZ)
-                    let endDate = addDaysToDate(dateString: startedDate, timeZone: japanTZ, add: 14)
+                    let endDate = addDaysToDate(dateString: startedDate, timeZone: japanTZ, add: 16)
                     defaults.set(startedDate, forKey: "startedDate")
                     defaults.set(endDate!, forKey: "endDate")
                     
